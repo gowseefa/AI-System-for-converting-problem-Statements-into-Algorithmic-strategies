@@ -113,8 +113,11 @@ app.post('/chat', async (req, res) => {
 
 // Serve frontend in production
 app.use(express.static(path.join(__dirname, '../dist')));
-
+app.get("/", (req, res) => {
+  res.send("AI System Backend is Running ");
+});
 // Listen
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`\nAI Mentor Backend is active on port ${PORT}!`);
 });
+
